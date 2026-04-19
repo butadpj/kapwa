@@ -27,8 +27,8 @@ const CodeBlock = ({ children, className, ...props }: CodeBlockProps) => {
       className={cn(
         'relative flex items-center justify-between gap-2',
         'px-4 py-3 rounded-lg',
-        'kapwa-bg-gray-50 border kapwa-border-gray-200',
-        'font-mono text-sm kapwa-text-gray-900',
+        'border border-kapwa-gray-200 bg-kapwa-gray-50',
+        'font-mono text-sm text-kapwa-gray-900',
         className
       )}
       {...props}
@@ -43,10 +43,10 @@ const CodeBlock = ({ children, className, ...props }: CodeBlockProps) => {
           'shrink-0 inline-flex items-center gap-1.5',
           'px-2.5 py-1.5 rounded-md text-xs',
           'transition-colors duration-200',
-          'hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500',
+          'hover:bg-kapwa-gray-200 focus:outline-none focus:ring-2 focus:ring-[var(--color-kapwa-border-focus)]',
           copied
-            ? 'kapwa-bg-success-weak kapwa-text-success'
-            : 'bg-transparent kapwa-text-gray-600'
+            ? 'bg-[var(--color-kapwa-bg-success-weak)] text-[var(--color-kapwa-text-success)]'
+            : 'bg-transparent text-kapwa-gray-600'
         )}
         aria-label={copied ? 'Copied!' : 'Copy command to clipboard'}
       >

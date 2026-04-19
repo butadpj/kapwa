@@ -25,13 +25,14 @@ const Button = ({
 }: ButtonProps) => {
   const variants = {
     primary:
-      'bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500',
+      'bg-[var(--colorkapwa-bg-brand-default)] text-[var(--color-kapwa-text-inverse)] hover:bg-[var(--color-kapwa-bg-brand-hover)] active:bg-[var(--color-kapwa-bg-brand-active)] focus-visible:ring-[var(--color-kapwa-border-focus)]',
     secondary:
-      'bg-secondary-500 text-white hover:bg-secondary-600 focus:ring-secondary-500',
+      'bg-[var(--color-kapwa-bg-gray-default)] text-[var(--color-kapwa-text-strong)] hover:bg-[var(--color-kapwa-bg-gray-hover)] active:bg-[var(--color-kapwa-bg-gray-active)] focus-visible:ring-[var(--color-kapwa-border-focus)]',
     outline:
-      'bg-transparent border border-gray-300 text-gray-700 hover:bg-gray-50 focus:ring-primary-500',
-    ghost: 'bg-transparent text-gray-700 hover:bg-gray-100 focus:ring-gray-500',
-    link: 'bg-transparent text-primary-500 hover:underline p-0 h-auto focus:ring-0',
+      'border border-[var(--color-kapwa-border-strong)] bg-transparent text-[var(--color-kapwa-text-support)] hover:bg-[var(--color-kapwa-bg-gray-default)] active:bg-[var(--color-kapwa-bg-gray-hover)] focus-visible:ring-[var(--color-kapwa-border-focus)]',
+    ghost:
+      'bg-transparent text-[var(--color-kapwa-text-support)] hover:bg-[var(--color-kapwa-bg-gray-default)] active:bg-[var(--color-kapwa-bg-gray-hover)] focus-visible:ring-[var(--color-kapwa-border-focus)]',
+    link: 'h-auto bg-transparent p-0 text-[var(--color-kapwa-text-link)] hover:text-[var(--color-kapwa-text-link-hover)] hover:underline focus-visible:ring-0',
   };
 
   const sizes = {
@@ -46,7 +47,7 @@ const Button = ({
     <button
       className={cn(
         'inline-flex items-center justify-center rounded-md font-medium transition-colors',
-        'focus:outline-hidden focus:ring-2 focus:ring-offset-2',
+        'focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2',
         variants[variant],
         sizes[size],
         fullWidth ? 'w-full' : '',

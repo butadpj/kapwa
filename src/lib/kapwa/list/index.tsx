@@ -33,7 +33,11 @@ const List = ({
     <Card>
       <CardHeader>
         <h2 className='text-2xl font-semibold'>{headerTitle}</h2>
-        {headerSubtitle && <p className='text-gray-800'>{headerSubtitle}</p>}
+        {headerSubtitle && (
+          <p className='text-[var(--color-kapwa-text-support)]'>
+            {headerSubtitle}
+          </p>
+        )}
       </CardHeader>
       <CardContent>
         <div className='space-y-8'>
@@ -43,14 +47,14 @@ const List = ({
               {listItems.map(item => (
                 <div
                   key={item.id}
-                  className='p-4 bg-white border border-gray-200 rounded-lg hover:border-primary-500 transition-colors'
+                  className='rounded-lg border border-[var(--color-kapwa-border-weak)] bg-[var(--color-kapwa-bg-surface)] p-4 transition-colors hover:border-[var(--color-kapwa-border-brand)]'
                 >
                   <div className='flex items-start justify-between'>
                     <div>
-                      <h4 className='text-lg font-medium text-gray-900'>
+                      <h4 className='text-lg font-medium text-[var(--color-kapwa-text-strong)]'>
                         {item.title}
                       </h4>
-                      <span className='inline-block px-2 py-1 mt-2 text-xs font-medium rounded-sm bg-gray-100 text-gray-800'>
+                      <span className='mt-2 inline-block rounded-sm bg-[var(--color-kapwa-bg-gray-default)] px-2 py-1 text-xs font-medium text-[var(--color-kapwa-text-support)]'>
                         {item.category}
                       </span>
                     </div>

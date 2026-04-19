@@ -16,6 +16,8 @@ dist-ssr
 # Storybook
 storybook_static
 public/storybook
+docs/.vitepress/cache/
+docs/.vitepress/dist/
 
 # Playwright
 /test-results/

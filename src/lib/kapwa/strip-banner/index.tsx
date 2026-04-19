@@ -24,14 +24,14 @@ const StripBanner = ({
   return (
     <div>
       <h3 className='font-medium mb-4'>{stripBannerTitle}</h3>
-      <div className='relative overflow-hidden bg-linear-to-r from-orange-500 via-red-500 to-pink-500 text-white py-3 rounded-lg'>
+      <div className='relative overflow-hidden rounded-lg bg-linear-to-r from-kapwa-orange-500 via-kapwa-red-500 to-kapwa-purple-600 py-3 text-[var(--color-kapwa-text-inverse)]'>
         <div className='container mx-auto px-4'>
           <div className='flex flex-col sm:flex-row items-center justify-between gap-2'>
             <div className='flex items-center gap-3'>
               <span className='font-bold text-sm'>
                 {stripBanner.emoji} {stripBanner.mainText}
               </span>
-              <span className='hidden md:inline text-sm text-orange-100'>
+              <span className='hidden text-sm text-kapwa-orange-100 md:inline'>
                 {stripBanner.subText}
               </span>
             </div>
@@ -39,7 +39,7 @@ const StripBanner = ({
               <a
                 className={
                   stripBanner.primaryButton.className ||
-                  'bg-gray-100 text-gray-800 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-gray-200'
+                  'rounded-full bg-[var(--color-kapwa-bg-surface)] px-4 py-1.5 text-sm font-semibold text-[var(--color-kapwa-text-strong)] hover:bg-[var(--color-kapwa-bg-surface-raised)]'
                 }
                 href={stripBanner.primaryButton.href}
               >
@@ -48,7 +48,7 @@ const StripBanner = ({
               <a
                 className={
                   stripBanner.secondaryLink.className ||
-                  'text-xs text-orange-200 underline'
+                  'text-kapwa-orange-200 text-xs underline'
                 }
                 href={stripBanner.secondaryLink.href}
               >

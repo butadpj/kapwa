@@ -3,14 +3,8 @@
 
 [build]
   # Directory to publish (relative to root of your repo)
-  publish = "dist"
+  publish = "site"
   # Default build command
   command = "npm run build"
 
-# The following redirect is intended for use with single-page applications (SPA)
-# like React Router. It allows client-side routing to work correctly by
-# redirecting all routes to index.html and letting the SPA handle the routing.
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# VitePress emits static HTML, so an SPA catch-all redirect is no longer needed.

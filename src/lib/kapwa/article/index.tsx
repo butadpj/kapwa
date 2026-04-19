@@ -38,11 +38,13 @@ const ArticleCard = ({ article }: { article: ArticleCardItem }) => {
         <>
           <CardImage src={article.image} alt={article.imageAlt} />
           <CardContent>
-            <span className='inline-block px-2 py-1 text-xs font-medium rounded-sm bg-primary-100 text-primary-800 mb-2'>
+            <span className='mb-2 inline-block rounded-sm bg-[var(--color-kapwa-bg-brand-weak)] px-2 py-1 text-xs font-medium text-[var(--color-kapwa-text-brand)]'>
               {article.category}
             </span>
             <h3 className='text-xl font-semibold mb-2'>{article.title}</h3>
-            <p className='text-gray-800 mb-4'>{article.description}</p>
+            <p className='mb-4 text-[var(--color-kapwa-text-support)]'>
+              {article.description}
+            </p>
             <Button variant='link'>Read More</Button>
           </CardContent>
         </>
@@ -79,7 +81,10 @@ const ArticleContent = ({
             );
           }
           return (
-            <p key={section.id} className='text-gray-800 mb-4'>
+            <p
+              key={section.id}
+              className='mb-4 text-[var(--color-kapwa-text-support)]'
+            >
               {section.content}
             </p>
           );

@@ -46,9 +46,9 @@ export const OfficialBiography = ({
   return (
     <div className='space-y-8'>
       <div className='max-w-4xl mx-auto'>
-        <div className='bg-white rounded-xl shadow-xs overflow-hidden'>
+        <div className='overflow-hidden rounded-xl bg-[var(--color-kapwa-bg-surface)] shadow-xs'>
           {/* Header Section */}
-          <div className='relative h-64 bg-primary-700'>
+          <div className='relative h-64 bg-[var(--color-kapwa-bg-brand-default)]'>
             <div className='absolute inset-0'>
               <img
                 src={profile.bannerImage}
@@ -56,7 +56,7 @@ export const OfficialBiography = ({
                 className='w-full h-full object-cover opacity-20'
               />
             </div>
-            <div className='absolute inset-0 bg-linear-to-b from-primary-900/50 to-primary-900/90' />
+            <div className='absolute inset-0 bg-linear-to-b from-kapwa-brand-950/50 to-kapwa-brand-950/90' />
             <div className='relative h-full container mx-auto px-6 flex items-center'>
               <div className='flex items-center space-x-8'>
                 <img
@@ -65,11 +65,11 @@ export const OfficialBiography = ({
                   className='w-40 h-40 rounded-full border-4 border-white shadow-xl object-cover'
                 />
                 <div className='text-white'>
-                  <div className='text-sm font-medium text-primary-200 mb-1'>
+                  <div className='mb-1 text-sm font-medium text-kapwa-brand-200'>
                     {profile.position}
                   </div>
                   <h1 className='text-4xl font-bold mb-2'>{profile.name}</h1>
-                  <p className='text-primary-100'>{profile.servingSince}</p>
+                  <p className='text-kapwa-brand-100'>{profile.servingSince}</p>
                 </div>
               </div>
             </div>
@@ -80,13 +80,13 @@ export const OfficialBiography = ({
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-8'>
               {/* Left Column - Contact & Basic Info */}
               <div className='space-y-6'>
-                <div className='bg-gray-50 rounded-lg p-6'>
+                <div className='rounded-lg bg-[var(--color-kapwa-bg-surface-raised)] p-6'>
                   <h3 className='text-lg font-semibold mb-4'>
                     Contact Information
                   </h3>
                   <div className='space-y-4'>
-                    <div className='flex items-center text-gray-800'>
-                      <Building className='h-5 w-5 mr-3 text-primary-600' />
+                    <div className='flex items-center text-[var(--color-kapwa-text-support)]'>
+                      <Building className='mr-3 h-5 w-5 text-[var(--color-kapwa-text-brand)]' />
                       <div>
                         <div className='font-medium'>Office</div>
                         <div className='text-sm'>
@@ -94,8 +94,8 @@ export const OfficialBiography = ({
                         </div>
                       </div>
                     </div>
-                    <div className='flex items-center text-gray-800'>
-                      <Phone className='h-5 w-5 mr-3 text-primary-600' />
+                    <div className='flex items-center text-[var(--color-kapwa-text-support)]'>
+                      <Phone className='mr-3 h-5 w-5 text-[var(--color-kapwa-text-brand)]' />
                       <div>
                         <div className='font-medium'>Phone</div>
                         <div className='text-sm'>
@@ -103,8 +103,8 @@ export const OfficialBiography = ({
                         </div>
                       </div>
                     </div>
-                    <div className='flex items-center text-gray-800'>
-                      <Mail className='h-5 w-5 mr-3 text-primary-600' />
+                    <div className='flex items-center text-[var(--color-kapwa-text-support)]'>
+                      <Mail className='mr-3 h-5 w-5 text-[var(--color-kapwa-text-brand)]' />
                       <div>
                         <div className='font-medium'>Email</div>
                         <div className='text-sm'>
@@ -112,8 +112,8 @@ export const OfficialBiography = ({
                         </div>
                       </div>
                     </div>
-                    <div className='flex items-center text-gray-800'>
-                      <Globe className='h-5 w-5 mr-3 text-primary-600' />
+                    <div className='flex items-center text-[var(--color-kapwa-text-support)]'>
+                      <Globe className='mr-3 h-5 w-5 text-[var(--color-kapwa-text-brand)]' />
                       <div>
                         <div className='font-medium'>Website</div>
                         <div className='text-sm'>
@@ -124,19 +124,21 @@ export const OfficialBiography = ({
                   </div>
                 </div>
 
-                <div className='bg-gray-50 rounded-lg p-6'>
+                <div className='rounded-lg bg-[var(--color-kapwa-bg-surface-raised)] p-6'>
                   <h3 className='text-lg font-semibold mb-4'>Education</h3>
                   <div className='space-y-4'>
                     {profile.education.map((edu, index) => (
                       <div
                         key={index}
-                        className='border-l-2 border-primary-500 pl-4'
+                        className='border-l-2 border-[var(--color-kapwa-border-brand)] pl-4'
                       >
                         <div className='font-medium'>{edu.degree}</div>
-                        <div className='text-sm text-gray-800'>
+                        <div className='text-sm text-[var(--color-kapwa-text-support)]'>
                           {edu.institution}
                         </div>
-                        <div className='text-sm text-gray-800'>{edu.year}</div>
+                        <div className='text-sm text-[var(--color-kapwa-text-support)]'>
+                          {edu.year}
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -151,7 +153,7 @@ export const OfficialBiography = ({
                     {profile.biography.map((paragraph, index) => (
                       <p
                         key={index}
-                        className='text-gray-800 leading-relaxed mt-4 first:mt-0'
+                        className='mt-4 leading-relaxed text-[var(--color-kapwa-text-support)] first:mt-0'
                       >
                         {paragraph}
                       </p>
@@ -166,8 +168,10 @@ export const OfficialBiography = ({
                   <div className='grid gap-4'>
                     {profile.achievements.map((achievement, index) => (
                       <div key={index} className='flex items-start'>
-                        <Award className='h-5 w-5 text-primary-600 mt-1 mr-3 shrink-0' />
-                        <p className='text-gray-800'>{achievement}</p>
+                        <Award className='mt-1 mr-3 h-5 w-5 shrink-0 text-[var(--color-kapwa-text-brand)]' />
+                        <p className='text-[var(--color-kapwa-text-support)]'>
+                          {achievement}
+                        </p>
                       </div>
                     ))}
                   </div>
@@ -176,20 +180,13 @@ export const OfficialBiography = ({
                 {(contactCta || websiteCta) && (
                   <div className='flex space-x-4 mt-8'>
                     {contactCta && (
-                      <Button
-                        className='bg-primary-600 hover:bg-primary-700 text-white'
-                        onClick={contactCta.onClick}
-                      >
+                      <Button onClick={contactCta.onClick}>
                         <Mail className='h-4 w-4 mr-2' />
                         {contactCta.text}
                       </Button>
                     )}
                     {websiteCta && (
-                      <Button
-                        variant='outline'
-                        className='border-gray-300 text-gray-700 hover:bg-gray-50'
-                        onClick={websiteCta.onClick}
-                      >
+                      <Button variant='outline' onClick={websiteCta.onClick}>
                         <Globe className='h-4 w-4 mr-2' />
                         {websiteCta.text}
                       </Button>

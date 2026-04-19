@@ -16,7 +16,7 @@ const Card = ({
   return (
     <div
       className={cn(
-        'bg-white rounded-lg border border-gray-200 shadow-xs overflow-hidden',
+        'overflow-hidden rounded-lg border border-[var(--color-kapwa-border-weak)] bg-[var(--color-kapwa-bg-surface)] shadow-xs',
         hoverable &&
           'transition-all duration-300 hover:shadow-md hover:-translate-y-1',
         className
@@ -38,7 +38,10 @@ interface CardHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
 const CardHeader = ({ children, className, ...props }: CardHeaderProps) => {
   return (
     <div
-      className={cn('p-4 md:p-6 border-b border-gray-200', className)}
+      className={cn(
+        'border-b border-[var(--color-kapwa-border-weak)] p-4 md:p-6',
+        className
+      )}
       role='heading'
       aria-level={2}
       {...props}
@@ -75,7 +78,7 @@ const CardFooter = ({ children, className, ...props }: CardFooterProps) => {
   return (
     <div
       className={cn(
-        'p-4 md:p-6 border-t border-gray-200 bg-gray-50',
+        'border-t border-[var(--color-kapwa-border-weak)] bg-[var(--color-kapwa-bg-surface-raised)] p-4 md:p-6',
         className
       )}
       {...props}
