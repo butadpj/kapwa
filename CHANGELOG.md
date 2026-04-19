@@ -1,3 +1,9 @@
+# [1.1.0](https://github.com/butadpj/kapwa/compare/v1.0.0...v1.1.0) (2026-04-19)
+
+### Features
+
+- setup vitepress and start revamping the site ([e01da93](https://github.com/butadpj/kapwa/commit/e01da93be811b3f9637b12ecc9ca06005a075307))
+
 # 1.0.0 (2026-04-17)
 
 ### Bug Fixes
