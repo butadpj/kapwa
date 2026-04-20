@@ -1,3 +1,9 @@
+## [1.1.1](https://github.com/butadpj/kapwa/compare/v1.1.0...v1.1.1) (2026-04-20)
+
+### Bug Fixes
+
+- add missing icons/logos ([336ffff](https://github.com/butadpj/kapwa/commit/336fffffc9b47c83aa49337db8b5deba5bf8a4af))
+
 # [1.1.0](https://github.com/butadpj/kapwa/compare/v1.0.0...v1.1.0) (2026-04-19)
 
 ### Features
