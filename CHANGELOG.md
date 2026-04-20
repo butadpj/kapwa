@@ -1,3 +1,13 @@
+# [1.3.0](https://github.com/butadpj/kapwa/compare/v1.2.2...v1.3.0) (2026-04-20)
+
+### Bug Fixes
+
+- real fix to hard navigation issue ([bbe7945](https://github.com/butadpj/kapwa/commit/bbe79459d2ef84b31685c422b06701e4fd878665))
+
+### Features
+
+- haha undo this. vitepress doesn't seem to behave like an SPA ([db1f34f](https://github.com/butadpj/kapwa/commit/db1f34fd0530202d9f605c9a469b4edff47a5fb8))
+
 ## [1.2.2](https://github.com/butadpj/kapwa/compare/v1.2.1...v1.2.2) (2026-04-20)
 
 ### Bug Fixes
