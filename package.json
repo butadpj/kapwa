@@ -121,6 +121,9 @@
       "require": "./dist/index.cjs",
       "default": "./dist/index.js"
     },
+    "./kapwa.css": {
+      "default": "./dist/kapwa.css"
+    },
     "./styles": {
       "default": "./dist/index.css"
     },

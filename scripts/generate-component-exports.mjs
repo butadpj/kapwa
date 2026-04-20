@@ -42,6 +42,12 @@ async function generateComponentExports() {
   typesVersionsMap['.'] = ['./dist/index.d.ts'];
   console.log('  ✓ . (main)');
 
+  exportsMap['./kapwa.css'] = {
+    default: './dist/kapwa.css',
+  };
+
+  console.log('  ✓ ./kapwa.css');
+
   exportsMap['./styles'] = {
     default: './dist/index.css',
   };

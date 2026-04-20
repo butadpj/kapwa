@@ -45,7 +45,7 @@ These are the parts of the repository most contributors need first:
 - `src/lib/kapwa` contains exportable component library code.
 - `src/lib/kapwa/**.stories.tsx` contains Storybook stories for those components.
 - `src/styles/kapwa.css` contains the design token source of truth.
-- `src/styles/index.css` is the published style entrypoint for consumers.
+- `src/styles/kapwa.css` is the published style entrypoint for consumers.
 - `docs` contains the VitePress documentation source.
 - `docs/.vitepress/config.ts` configures the documentation site.
 - `scripts/generate-component-exports.mjs` regenerates public package exports after a library build.
@@ -77,8 +77,8 @@ During `npm run build-lib`, Vite scans `src/lib/kapwa/**/index.ts?(x)` and creat
 
 The CSS entrypoints are copied directly:
 
-- `src/styles/index.css` becomes `dist/index.css` and is exported as `@bettergov/kapwa/styles`.
-- `src/styles/kapwa.css` becomes `dist/kapwa.css`.
+- `src/styles/index.css` becomes `dist/index.css`.
+- `src/styles/kapwa.css` becomes `dist/kapwa.css` and is imported by consumers as `@bettergov/kapwa/kapwa.css`.
 
 React, React DOM, Tailwind-related packages, PostCSS, `lucide-react`, and similar consumer-owned dependencies are marked external so they are not bundled into the package.
 

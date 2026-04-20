@@ -4,82 +4,55 @@ _Design system for Government Portals used by BetterGov.ph_
 
 ## Installation
 
-### Option 1: Using shadcn CLI (Recommended)
+Use the npm package for application adoption. This keeps your app connected to future Kapwa component, style, token, and accessibility updates through normal package upgrades.
 
-The easiest way to add Kapwa components to your project is using the shadcn CLI:
+### Recommended: npm package
 
-1. [Install Tailwind CSS v4](https://tailwindcss.com/docs/installation)
+Install Kapwa:
 
-2. Initialize shadcn in your project:
+```bash
+npm install @bettergov/kapwa@latest
+```
 
-   ```bash
-   npx shadcn@latest init
-   ```
+If you want animation utilities:
 
-3. Add the Kapwa registry to your `components.json`:
+```bash
+npm install -D tw-animate-css
+```
 
-   ```json
-   {
-     "registries": {
-       "kapwa": "https://kapwa.bettergov.ph/r/{name}.json"
-     }
-   }
-   ```
+Add Kapwa to your CSS entrypoint:
 
-4. Browse available Kapwa components:
+```css
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
-   ```bash
-   npx shadcn@latest list kapwa
-   ```
+@source './node_modules/@bettergov/kapwa';
+@import '@bettergov/kapwa/kapwa.css';
+```
 
-5. Add components to your project:
+The `@bettergov/kapwa/kapwa.css` import loads Kapwa tokens and utilities. The `@source` line is required so Tailwind can detect classes used inside Kapwa's published components.
 
-   ```bash
-   # Add a specific component
-   npx shadcn@latest add kapwa:button
+Import components from the package:
 
-   # Add multiple components
-   npx shadcn@latest add kapwa:button kapwa:card kapwa:input
-   ```
+```tsx
+import { Button } from '@bettergov/kapwa/button';
+```
 
-6. View component details:
+You can also import from the root package export:
 
-   ```bash
-   npx shadcn@latest view kapwa:button
-   ```
+```tsx
+import { Button } from '@bettergov/kapwa';
+```
 
-### Option 2: Manual Installation
+### Shadcn registry
 
-1. [Install Tailwind CSS v4](https://tailwindcss.com/docs/installation)
+The shadcn registry is available for testing and source-copy workflows, but it is not the main installation path right now.
 
-2. Install Kapwa
+Use it only if you intentionally want to copy component source into your app and own those files yourself. Copied files do not automatically receive future Kapwa fixes through a package upgrade.
 
-   ```bash
-   npm install @bettergov/kapwa
-   ```
+If you are testing the registry, your app still needs the Kapwa CSS entrypoint shown above.
 
-3. Install tw-animate-css for animation (Optional)
-
-   ```bash
-   npm install -D tw-animate-css
-   ```
-
-4. Add Kapwa in your CSS entrypoint
-
-   ```css
-   // index.css
-
-   @import 'tailwindcss';
-   @import 'tw-animate-css';
-
-   @source './node_modules/@bettergov/kapwa';
-   @import '@bettergov/kapwa/kapwa.css';
-   ```
-
-   > _Without the @source you can't use @bettergov/kapwa's tailwind classes (i.e. kapwa colors, spacing, and others)_
-   > See: https://tailwindcss.com/docs/detecting-classes-in-source-files#explicitly-registering-sources
-
-#### Loading Kapwa's fonts
+### Fonts
 
 It's better to have consumers load Kapwa's fonts themselves because:
 
@@ -88,89 +61,87 @@ It's better to have consumers load Kapwa's fonts themselves because:
 - Self-hosting lets you control caching headers and domains, reducing layout shifts caused by cross-origin font requests and keeping Core Web Vitals happy.
 - You can omit fonts you do not use (e.g., only regular weights) which shrinks page weight for users on low-bandwidth connections.
 
-**Example setups:**
+**Next.js App Router**
 
-1. **Next.js (App Router)**
+```ts
+// app/fonts.ts
+import { Inter, Roboto_Mono } from 'next/font/google';
 
-   ```ts
-   // app/fonts.ts
-   import { Inter, Roboto_Mono } from 'next/font/google';
+export const kapwaSans = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-kapwa-sans',
+  display: 'swap',
+});
 
-   export const kapwaSans = Inter({
-     subsets: ['latin'],
-     weight: ['400', '500', '600', '700'],
-     variable: '--font-kapwa-sans',
-     display: 'swap',
-   });
+export const kapwaMono = Roboto_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  variable: '--font-kapwa-mono',
+  display: 'swap',
+});
+```
 
-   export const kapwaMono = Roboto_Mono({
-     subsets: ['latin'],
-     weight: ['400', '500', '600'],
-     variable: '--font-kapwa-mono',
-     display: 'swap',
-   });
-   ```
+```tsx
+// app/layout.tsx
+import { kapwaSans, kapwaMono } from './fonts';
 
-   ```ts
-   // app/layout.tsx
-   import { kapwaSans, kapwaMono } from './fonts';
+export default function RootLayout({ children }) {
+  return (
+    <html
+      lang='en'
+      className={`${kapwaSans.variable} ${kapwaMono.variable} antialiased`}
+    >
+      <body>{children}</body>
+    </html>
+  );
+}
+```
 
-   export default function RootLayout({ children }) {
-     return (
-       <html lang="en" className={`${kapwaSans.variable} ${kapwaMono.variable} antialiased`}>
-         <body>{children}</body>
-       </html>
-     );
-   }
-   ```
+```css
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
-   ```css
-   // Finally, add the CSS variable to your Tailwind CSS file
-   @import 'tailwindcss';
-   @import 'tw-animate-css';
+@source './node_modules/@bettergov/kapwa';
+@import '@bettergov/kapwa/kapwa.css';
 
-   @source './node_modules/@bettergov/kapwa';
-   @import '@bettergov/kapwa/kapwa.css';
+@theme inline {
+  --font-sans: var(--font-kapwa-sans);
+  --font-mono: var(--font-kapwa-mono);
+}
+```
 
-   @theme inline {
-     --font-sans: var(--font-kapwa-sans);
-     --font-mono: var(--font-kapwa-mono);
-   }
-   ```
+**Vite or plain React**
 
-2. **Vite / CRA / plain React**
+```css
+/* src/fonts.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap');
 
-   ```css
-   /* src/fonts.css */
-   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap');
+:root {
+  --font-kapwa-sans:
+    'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  --font-kapwa-mono:
+    'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
 
-   :root {
-     --font-kapwa-sans:
-       'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-       sans-serif;
-     --font-kapwa-mono:
-       'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
-   }
+body {
+  font-family: var(--font-kapwa-sans);
+}
 
-   body {
-     font-family: var(--font-kapwa-sans);
-   }
+code,
+pre {
+  font-family: var(--font-kapwa-mono);
+}
+```
 
-   code,
-   pre {
-     font-family: var(--font-kapwa-mono);
-   }
-   ```
+```ts
+// src/main.tsx
+import './fonts.css';
+import '@bettergov/kapwa/kapwa.css';
+```
 
-   ```ts
-   // src/main.tsx
-   import './fonts.css';
-   import '@bettergov/kapwa/kapwa.css';
-   ```
-
-   > Bind `--font-kapwa-sans` and `--font-kapwa-mono` in your Tailwind config (e.g., `fontFamily: { sans: ['var(--font-kapwa-sans)'], mono: ['var(--font-kapwa-mono)'] }`) so Kapwa utilities pick up the same typography tokens.
-
-**_That's it! You've successfully setup Kapwa! 🥳_**
+For the full adoption guide, read [Installation](./docs/guides/installation.md).
 
 ---
 
@@ -202,13 +173,13 @@ Please read our [Code of Conduct](./CODE_OF_CONDUCT.md) before participating.
 ## Contributing
 
 We welcome contributions from everyone!
-Please see our [Contributing Guide](./CONTRIBUTING.md) for details on:
+Please see our [Contributing Guide](./docs/guides/contributing.md) for details on:
 
 - Development setup
 - Reporting bugs
 - Opening issues and pull requests
 
-## Contributing
+## Contributors
 
 Thanks to all the people who already contributed!
 

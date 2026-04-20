@@ -25,10 +25,10 @@ Add Kapwa to your CSS entrypoint:
 @import 'tw-animate-css';
 
 @source './node_modules/@bettergov/kapwa';
-@import '@bettergov/kapwa/styles';
+@import '@bettergov/kapwa/kapwa.css';
 ```
 
-The `@bettergov/kapwa/styles` import loads Kapwa tokens and utilities. The `@source` line is required so Tailwind can detect the classes used inside Kapwa's published components.
+The `@bettergov/kapwa/kapwa.css` import loads Kapwa tokens and utilities. The `@source` line is required so Tailwind can detect the classes used inside Kapwa's published components.
 
 Import components from the package:
 
@@ -57,7 +57,7 @@ If you are testing the registry, the app still needs the Kapwa CSS entrypoint:
 @import 'tw-animate-css';
 
 @source './node_modules/@bettergov/kapwa';
-@import '@bettergov/kapwa/styles';
+@import '@bettergov/kapwa/kapwa.css';
 ```
 
 ## Fonts
