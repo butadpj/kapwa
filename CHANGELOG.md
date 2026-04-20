@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/butadpj/kapwa/compare/v1.1.1...v1.2.0) (2026-04-20)
+
+### Features
+
+- initialize storybook revamp ([f4e6b67](https://github.com/butadpj/kapwa/commit/f4e6b6733ee619d953e1c8e8dab7193eda7d0b7f))
+- setup mermaid plugin for adding diagrams on docs ([6053bbf](https://github.com/butadpj/kapwa/commit/6053bbfcfcd654ae0fe45fdfbf500c3f734919f8))
+
 ## [1.1.1](https://github.com/butadpj/kapwa/compare/v1.1.0...v1.1.1) (2026-04-20)
 
 ### Bug Fixes
