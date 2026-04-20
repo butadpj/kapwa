@@ -10,10 +10,10 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "dev": "concurrently -p \"[{name}]\" -n \"SITE,STORYBOOK\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm run dev:site\" \"npm run start:storybook\"",
+    "dev": "concurrently -p \"[{name}]\" -n \"STORYBOOK,SITE\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm run dev:storybook\" \"npm run dev:site\"",
     "dev:site": "vitepress dev docs --open",
-    "start:legacy-site": "vite --config vite.config-site.ts --open",
-    "start:storybook": "storybook dev --docs -p 6006",
+    "dev:legacy-site": "vite --config vite.config-site.ts --open",
+    "dev:storybook": "storybook dev --docs -p 6006",
     "build-lib": "vite build --config vite.config-lib.ts && node scripts/generate-component-exports.mjs",
     "build-site": "vitepress build docs",
     "build": "npm run build-lib && npm run build-site && npm run build:storybook",

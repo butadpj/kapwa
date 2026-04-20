@@ -9,6 +9,36 @@ const storybookUrl = isDev
 
 export default defineConfig({
   title: 'Kapwa',
+  head: [
+    ['link', { rel: 'icon', href: '/manifest/favicon.ico' }],
+    ['link', { rel: 'manifest', href: '/manifest/site.webmanifest' }],
+    [
+      'link',
+      {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: '/manifest/apple-touch-icon.png',
+      },
+    ],
+    [
+      'link',
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32x32',
+        href: '/manifest/favicon-32x32.png',
+      },
+    ],
+    [
+      'link',
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        href: '/manifest/favicon-16x16.png',
+      },
+    ],
+  ],
   description: 'Kapwa design system documentation',
   outDir: '../site',
   cleanUrls: true,
@@ -23,6 +53,8 @@ export default defineConfig({
     /^\.\/PRs(?:\.md)?$/,
   ],
   vite: {
+    // Keep static assets in the repo-standard root /public directory.
+    publicDir: '../public',
     plugins: isDev
       ? [
           {
@@ -47,6 +79,7 @@ export default defineConfig({
       : [],
   },
   themeConfig: {
+    logo: '/logos/svg/BetterGov_Icon-Primary.svg',
     nav: [
       { text: 'Guides', link: '/guides/' },
       { text: 'Design Decisions', link: '/decisions/' },

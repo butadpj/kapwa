@@ -134,6 +134,11 @@ body {
   letter-spacing: -0.02em;
 }
 
+.VPNavBarTitle .logo {
+  width: 2rem;
+  height: 2rem;
+}
+
 .VPFeature {
   border: 1px solid var(--vp-c-divider);
   border-radius: 20px;
@@ -167,7 +172,6 @@ body {
 
 .vp-doc h2 {
   margin-top: 2.4rem;
-  padding-top: 0.35rem;
   border-top: 1px solid var(--vp-c-divider);
 }
 
