@@ -1,3 +1,9 @@
+## [1.2.1](https://github.com/butadpj/kapwa/compare/v1.2.0...v1.2.1) (2026-04-20)
+
+### Bug Fixes
+
+- inaccuracy on docs ([e5651f3](https://github.com/butadpj/kapwa/commit/e5651f3c427ca45255236000106917416f03865a))
+
 # [1.2.0](https://github.com/butadpj/kapwa/compare/v1.1.1...v1.2.0) (2026-04-20)
 
 ### Features
