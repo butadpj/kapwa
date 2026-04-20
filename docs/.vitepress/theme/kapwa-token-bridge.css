@@ -175,6 +175,11 @@ body {
   border-top: 1px solid var(--vp-c-divider);
 }
 
+.vp-doc .mermaid .nodeLabel,
+.vp-doc .mermaid p {
+  line-height: 1.35 !important;
+}
+
 .vp-doc :not(pre) > code {
   border: 1px solid var(--vp-c-divider);
   border-radius: 999px;

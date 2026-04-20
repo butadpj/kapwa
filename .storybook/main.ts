@@ -1,7 +1,15 @@
 import type { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
+  core: {
+    disableTelemetry: true,
+    disableWhatsNewNotifications: true,
+  },
   stories: ['../src/lib/kapwa/**/*.stories.tsx'],
+  staticDirs: [
+    { from: '../public/logos/svg', to: '/logos/svg' },
+    { from: '../public/manifest', to: '/manifest' },
+  ],
   framework: {
     name: '@storybook/react-vite',
     options: {
@@ -11,6 +19,7 @@ const config: StorybookConfig = {
     },
   },
   addons: [
+    './manager-preset.cjs',
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',

@@ -105,17 +105,7 @@ Before you start contributing, ensure you have the following:
 To set up your environment, perform the following actions:
 
 - At the root of the project, create a `.env` file. See [env.example](.env.example) for reference
-- Use the Node.js version specified in .nvmrc (recommended)
-
-  ```
-  # If you have nvm installed:
-
-  nvm use
-
-  # Or if you have fnm installed:
-
-  fnm use
-  ```
+- Use the Node.js and npm versions declared in `package.json`
 
 - Install the dependencies
 

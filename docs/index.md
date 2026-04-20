@@ -4,11 +4,11 @@ layout: home
 hero:
   name: Kapwa
   text: Better digital government for the Philippines
-  tagline: Kapwa is BetterGov's design system for public digital services in the Philippines. Inspired by the Filipino value of togetherness, it helps teams build government experiences that feel clearer, kinder, and easier to trust.
+  tagline: Kapwa is BetterGov's design system for public digital services in the Philippines. It helps designers and developers build government experiences that are clearer, more consistent, and more worthy of public trust.
   actions:
     - theme: brand
       text: Explore Kapwa
-      link: /decisions/why-kapwa
+      link: /guides/index
     - theme: alt
       text: Open Storybook
       link: /storybook/
@@ -17,9 +17,9 @@ hero:
 
 features:
   - title: Built For Public Service
-    details: Kapwa focuses on the everyday experience of people using government websites and digital services, especially where clarity, trust, and accessibility matter most.
+    details: Kapwa is designed for the realities of public service, where people need information and services to be clear, reliable, and easy to use.
   - title: Rooted In Filipino Values
-    details: The system takes its name from Kapwa, a Filipino idea of shared identity and care for one another, and brings that spirit into interface design.
+    details: Its name comes from a Filipino value of shared selfhood and care for others. That spirit shapes how the system approaches design, language, and usability.
   - title: Ready To Use
-    details: This site explains the system and its principles. Storybook shows the components, patterns, and states teams can use in real products.
+    details: This site explains the thinking, guidance, and technical setup behind Kapwa. Storybook provides the component reference teams can use in real products.
 ---
