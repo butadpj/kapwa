@@ -1,3 +1,9 @@
+## [1.2.2](https://github.com/butadpj/kapwa/compare/v1.2.1...v1.2.2) (2026-04-20)
+
+### Bug Fixes
+
+- vercel SPA routing ([1a8cae0](https://github.com/butadpj/kapwa/commit/1a8cae0987b34d2e1c4e75bbfaf604c12fbfcd11))
+
 ## [1.2.1](https://github.com/butadpj/kapwa/compare/v1.2.0...v1.2.1) (2026-04-20)
 
 ### Bug Fixes
