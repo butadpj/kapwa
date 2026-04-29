@@ -1,3 +1,16 @@
+# [1.1.0](https://github.com/butadpj/kapwa/compare/v1.0.0...v1.1.0) (2026-04-29)
+
+### Bug Fixes
+
+- add missing icons/logos ([336ffff](https://github.com/butadpj/kapwa/commit/336fffffc9b47c83aa49337db8b5deba5bf8a4af))
+- inaccuracy on docs ([e5651f3](https://github.com/butadpj/kapwa/commit/e5651f3c427ca45255236000106917416f03865a))
+
+### Features
+
+- initialize storybook revamp ([f4e6b67](https://github.com/butadpj/kapwa/commit/f4e6b6733ee619d953e1c8e8dab7193eda7d0b7f))
+- setup mermaid plugin for adding diagrams on docs ([6053bbf](https://github.com/butadpj/kapwa/commit/6053bbfcfcd654ae0fe45fdfbf500c3f734919f8))
+- setup vitepress and start revamping the site ([e01da93](https://github.com/butadpj/kapwa/commit/e01da93be811b3f9637b12ecc9ca06005a075307))
+
 # [1.3.0](https://github.com/bettergovph/kapwa/compare/v1.2.5...v1.3.0) (2026-04-27)
 
 ### Bug Fixes
