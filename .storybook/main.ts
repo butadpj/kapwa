@@ -5,7 +5,10 @@ const config: StorybookConfig = {
     disableTelemetry: true,
     disableWhatsNewNotifications: true,
   },
-  stories: ['../src/lib/kapwa/**/*.stories.tsx'],
+  stories: [
+    '../src/lib/kapwa/introduction.stories.tsx',
+    '../src/lib/kapwa/**/*.stories.tsx',
+  ],
   staticDirs: [
     { from: '../public/logos/svg', to: '/logos/svg' },
     { from: '../public/manifest', to: '/manifest' },
